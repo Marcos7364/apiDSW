@@ -32,6 +32,10 @@ Route::middleware('auth:sanctum')->group(function () {
     // Autenticación
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/me', [AuthController::class, 'me']);
+    // Endpoint que devuelve únicamente el rol del usuario autenticado
+    Route::get('/me/rol', function (Request $request) {
+        return response()->json(['rol' => $request->user()->rol]);
+    });
     Route::get('/materias/{id}/temas', [TemaController::class, 'porMateria']);
     Route::get('/temas/{id}/subtemas', [SubtemaController::class, 'porTema']);
     Route::get('/subtemas/{id}/contenidos', [ContenidoController::class, 'porSubtema']);

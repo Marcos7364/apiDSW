@@ -29,7 +29,7 @@ class AuthController extends Controller
                 'email' => $validated['email'],
                 // IMPORTANTE: No usamos Hash::make() aquí porque tu Modelo User
                 // ya tiene 'casts' => 'hashed'. Laravel lo hace solo.
-                'password' => $validated['password'], 
+                'contrasena_hash' => $validated['password'], 
                 'rol' => $validated['rol'],
             ]);
 
@@ -48,52 +48,38 @@ class AuthController extends Controller
     public function login(Request $request): JsonResponse
     {
         try {
-            // 1. Validamos 'password' (así lo envía Flutter y es el estándar)
             $request->validate([
                 'email' => 'required|string|email',
                 'password' => 'required|string',
             ]);
 
-            // 2. Preparamos las credenciales para Auth::attempt
-            // IMPORTANTE: La llave DEBE ser 'password' para que Laravel sepa que esa es la contraseña.
-            // Laravel buscará el usuario por 'email', obtendrá su hash de la BD (usando getAuthPassword del modelo)
-            // y lo comparará con lo que pasamos aquí en 'password'.
-            $credentials = [
-                'email' => $request->email,
-                'password' => $request->password 
-            ];
-
-            // 3. Intentamos loguear
-            if (!Auth::attempt($credentials)) {
+            if (!Auth::attempt($request->only('email', 'password'))) {
                 return response()->json([
                     'message' => 'Credenciales incorrectas'
                 ], 401);
             }
 
-            // 4. Éxito: Generar Token
-            $user = Auth::user();
-            // Borramos tokens viejos para mantener limpio (opcional)
-            $user->tokens()->delete();
+            $user = User::where('email', $request->email)->firstOrFail();
             $token = $user->createToken('auth_token')->plainTextToken;
 
             return response()->json([
                 'message' => 'Login exitoso',
+                'access_token' => $token,
+                'token_type' => 'Bearer',
                 'user' => $user,
-                'token' => $token,
-            ]);
+            ], 200);
 
         } catch (ValidationException $e) {
             return response()->json(['errors' => $e->errors()], 422);
         } catch (\Exception $e) {
-            // Esto nos ayudará a ver si hay otro error interno
             return response()->json(['message' => 'Error en servidor: ' . $e->getMessage()], 500);
         }
     }
 
-    // ... logout y me se quedan igual ...
     public function logout(Request $request): JsonResponse
     {
         $request->user()->currentAccessToken()->delete();
+        
         return response()->json(['message' => 'Logout exitoso']);
     }
 

@@ -55,8 +55,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(AvanceUsuario::class, 'usuario_id');
     }
+    
     public function getAuthPassword()
     {
         return $this->contrasena_hash;
+    }
+    
+    public function getAuthPasswordName()
+    {
+        return 'contrasena_hash';
     }
 }
