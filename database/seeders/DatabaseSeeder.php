@@ -15,13 +15,14 @@ class DatabaseSeeder extends Seeder
         $this->call([
             EjerciciosSeeder::class,
         ]);
-
+        DB::table('users')->where('id', 1)->delete();
         // 2. Creamos TU usuario administrador
         User::factory()->create([
-            'nombre' => 'Administrador',
-            'email' => 'admin@admin.com', // Usa este correo fácil
-            'password' => Hash::make('12345678'), // <--- TU CONTRASEÑA NUEVA
-            'rol' => 'estudiante', // <--- IMPORTANTE para poder crear/editar ejercicios
+            'id'       => 1,
+            'nombre' => 'Alumno Test',
+            'email' => 'alumno@test.com',
+            'contraseña_hash' => Hash::make('12345678'),
+            'rol' => 'alumno',
         ]);
     }
 }
