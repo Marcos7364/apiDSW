@@ -129,29 +129,9 @@ class EjerciciosSeeder extends Seeder
         // Contenido 1: Concepto Fundamental
         Contenido::create([
             'subtema_id' => $subVariable->id,
-            'titulo' => '¿Qué es una Variable?',
+            'titulo' => 'Concepto Fundamental',
             'tipo_contenido' => 'TEXTO',
-            'cuerpo' => <<<'HTML'
-<h2>Concepto Fundamental</h2>
-<p>Una <strong>variable</strong> es un espacio en la memoria del computador que almacena un valor que puede cambiar durante la ejecución de un programa.</p>
-
-<h3>¿Por qué son importantes las variables?</h3>
-<ul>
-    <li><strong>Almacenar datos:</strong> Guardan información que el programa necesita usar</li>
-    <li><strong>Manipular información:</strong> Permiten cambiar y procesar datos</li>
-    <li><strong>Reutilizar valores:</strong> Podemos usar el mismo dato múltiples veces sin escribirlo nuevamente</li>
-    <li><strong>Hacer programas dinámicos:</strong> El programa puede adaptarse a diferentes valores durante su ejecución</li>
-</ul>
-
-<h3>Analogía de la vida real</h3>
-<p>Imagina una <strong>caja etiquetada</strong>:</p>
-<ul>
-    <li>La <strong>etiqueta</strong> es el nombre de la variable</li>
-    <li>Lo que hay <strong>dentro de la caja</strong> es el valor almacenado</li>
-    <li>El <strong>contenedor</strong> es la memoria del computador</li>
-</ul>
-<p>Así como puedes cambiar lo que hay en una caja física, también puedes cambiar el valor de una variable durante la ejecución del programa.</p>
-HTML
+            'cuerpo' => "Una variable es un espacio en la memoria del computador que almacena un valor que puede cambiar durante la ejecución de un programa.\n\n¿POR QUÉ SON IMPORTANTES LAS VARIABLES?\n\n• Almacenar datos: Guardan información que el programa necesita usar\n\n• Manipular información: Permiten cambiar y procesar datos\n\n• Reutilizar valores: Podemos usar el mismo dato múltiples veces sin escribirlo nuevamente\n\n• Hacer programas dinámicos: El programa puede adaptarse a diferentes valores durante su ejecución\n\nANALOGÍA DE LA VIDA REAL\n\nImagina una caja etiquetada:\n\n• La etiqueta es el nombre de la variable\n\n• Lo que hay dentro de la caja es el valor almacenado\n\n• El contenedor es la memoria del computador\n\nAsí como puedes cambiar lo que hay en una caja física, también puedes cambiar el valor de una variable durante la ejecución del programa."
         ]);
 
         // Contenido 2: Componentes de una Variable
@@ -159,43 +139,7 @@ HTML
             'subtema_id' => $subVariable->id,
             'titulo' => 'Componentes de una Variable',
             'tipo_contenido' => 'TEXTO',
-            'cuerpo' => <<<'HTML'
-<h2>Partes Esenciales de una Variable</h2>
-
-<h3>1. Nombre (Identificador)</h3>
-<p>Es el nombre que le damos a la variable para referenciarnos a ella. Debe ser:</p>
-<ul>
-    <li>Único dentro del ámbito</li>
-    <li>Descriptivo (que tenga sentido)</li>
-    <li>Sin espacios</li>
-    <li>Puede contener letras, números y guiones bajos</li>
-    <li>No puede empezar con número</li>
-</ul>
-<p><strong>Ejemplos buenos:</strong> <code>edad</code>, <code>nombre_usuario</code>, <code>total_ventas</code></p>
-<p><strong>Ejemplos malos:</strong> <code>x</code>, <code>a1b2c3</code>, <code>123valor</code></p>
-
-<h3>2. Tipo de Dato</h3>
-<p>Define qué clase de información puede guardar la variable:</p>
-<ul>
-    <li><strong>int (entero):</strong> números sin decimales: -5, 0, 100</li>
-    <li><strong>float/double (decimal):</strong> números con decimales: 3.14, 2.5</li>
-    <li><strong>string (texto):</strong> palabras y frases: "Hola", "Juan"</li>
-    <li><strong>boolean (lógico):</strong> verdadero o falso: true, false</li>
-    <li><strong>char (carácter):</strong> un solo carácter: 'A', '5', '@'</li>
-</ul>
-
-<h3>3. Valor</h3>
-<p>Es el dato actual almacenado en la variable. Puede cambiar a lo largo del programa.</p>
-
-<h3>Estructura Completa</h3>
-<p><code>[Tipo] [Nombre] = [Valor];</code></p>
-<p><strong>Ejemplo:</strong> <code>int edad = 18;</code></p>
-<ul>
-    <li><strong>Tipo:</strong> int</li>
-    <li><strong>Nombre:</strong> edad</li>
-    <li><strong>Valor:</strong> 18</li>
-</ul>
-HTML
+            'cuerpo' => "PARTES ESENCIALES DE UNA VARIABLE\n\n1. NOMBRE (IDENTIFICADOR)\n\nEs el nombre que le damos a la variable para referenciarnos a ella. Debe ser:\n\n• Único dentro del ámbito\n• Descriptivo (que tenga sentido)\n• Sin espacios\n• Puede contener letras, números y guiones bajos\n• No puede empezar con número\n\nEjemplos buenos: edad, nombre_usuario, total_ventas\nEjemplos malos: x, a1b2c3, 123valor\n\n2. TIPO DE DATO\n\nDefine qué clase de información puede guardar la variable:\n\n• int (entero): números sin decimales (-5, 0, 100)\n• float/double (decimal): números con decimales (3.14, 2.5)\n• string (texto): palabras y frases (\"Hola\", \"Juan\")\n• boolean (lógico): verdadero o falso (true, false)\n• char (carácter): un solo carácter ('A', '5', '@')\n\n3. VALOR\n\nEs el dato actual almacenado en la variable. Puede cambiar a lo largo del programa.\n\nESTRUCTURA COMPLETA\n\n[Tipo] [Nombre] = [Valor];\n\nEjemplo: int edad = 18;\n\n• Tipo: int\n• Nombre: edad\n• Valor: 18"
         ]);
 
         // Contenido 3: Operaciones Básicas
@@ -203,47 +147,7 @@ HTML
             'subtema_id' => $subVariable->id,
             'titulo' => 'Operaciones con Variables',
             'tipo_contenido' => 'TEXTO',
-            'cuerpo' => <<<'HTML'
-<h2>Operaciones Básicas</h2>
-
-<h3>Declaración</h3>
-<p>Crear una variable sin asignarle un valor inicial:</p>
-<p><code>int numero;</code></p>
-<p>La variable existe en memoria pero no sabemos qué valor tiene.</p>
-
-<h3>Inicialización</h3>
-<p>Crear una variable y asignarle un valor inicial:</p>
-<p><code>int numero = 5;</code></p>
-
-<h3>Asignación</h3>
-<p>Cambiar el valor de una variable que ya existe:</p>
-<p><code>numero = 10;</code></p>
-<p>Ahora la variable <code>numero</code> vale 10, no 5.</p>
-
-<h3>Lectura</h3>
-<p>Usar el valor de una variable en operaciones:</p>
-<pre><code>
-int a = 5;
-int b = 3;
-int suma = a + b;  // suma = 8
-System.out.println(a);  // Imprime: 5
-</code></pre>
-
-<h3>Operaciones Aritméticas</h3>
-<ul>
-    <li><code>+</code> (suma): <code>int c = a + b;</code></li>
-    <li><code>-</code> (resta): <code>int c = a - b;</code></li>
-    <li><code>*</code> (multiplicación): <code>int c = a * b;</code></li>
-    <li><code>/</code> (división): <code>int c = a / b;</code></li>
-    <li><code>%</code> (módulo/residuo): <code>int c = a % b;</code></li>
-</ul>
-
-<h3>Incremento y Decremento</h3>
-<ul>
-    <li><code>x++</code> (incrementa 1): <code>int x = 5; x++; // x = 6</code></li>
-    <li><code>x--</code> (decrementa 1): <code>int x = 5; x--; // x = 4</code></li>
-</ul>
-HTML
+            'cuerpo' => "OPERACIONES BÁSICAS\n\nDECLARACIÓN\n\nCrear una variable sin asignarle un valor inicial:\n\nint numero;\n\nLa variable existe en memoria pero no sabemos qué valor tiene.\n\nINICIALIZACIÓN\n\nCrear una variable y asignarle un valor inicial:\n\nint numero = 5;\n\nASIGNACIÓN\n\nCambiar el valor de una variable que ya existe:\n\nnumero = 10;\n\nAhora la variable numero vale 10, no 5.\n\nLECTURA\n\nUsar el valor de una variable en operaciones:\n\nint a = 5;\nint b = 3;\nint suma = a + b;  // suma = 8\nSystem.out.println(a);  // Imprime: 5\n\nOPERACIONES ARITMÉTICAS\n\n• + (suma): int c = a + b;\n• - (resta): int c = a - b;\n• * (multiplicación): int c = a * b;\n• / (división): int c = a / b;\n• % (módulo/residuo): int c = a % b;\n\nINCREMENTO Y DECREMENTO\n\n• x++ (incrementa 1): int x = 5; x++; // x = 6\n• x-- (decrementa 1): int x = 5; x--; // x = 4"
         ]);
 
         // Contenido 4: Ejemplo Práctico
@@ -251,53 +155,7 @@ HTML
             'subtema_id' => $subVariable->id,
             'titulo' => 'Ejemplo Práctico Completo',
             'tipo_contenido' => 'TEXTO',
-            'cuerpo' => <<<'HTML'
-<h2>Programa de Ejemplo: Calculadora Simple</h2>
-
-<pre><code>
-// Declaramos las variables
-int numero1 = 10;
-int numero2 = 5;
-int suma;
-int resta;
-int multiplicacion;
-
-// Realizamos operaciones
-suma = numero1 + numero2;           // suma = 15
-resta = numero1 - numero2;          // resta = 5
-multiplicacion = numero1 * numero2; // multiplicacion = 50
-
-// Mostramos resultados
-System.out.println("Suma: " + suma);
-System.out.println("Resta: " + resta);
-System.out.println("Multiplicación: " + multiplicacion);
-
-// Podemos cambiar los valores
-numero1 = 20;
-numero2 = 3;
-
-suma = numero1 + numero2;  // Ahora suma = 23
-System.out.println("Nueva suma: " + suma);
-</code></pre>
-
-<h3>Explicación Paso a Paso</h3>
-<ol>
-    <li>Creamos tres variables: <code>numero1</code>, <code>numero2</code>, <code>suma</code>, etc.</li>
-    <li>Inicializamos <code>numero1</code> con 10 y <code>numero2</code> con 5</li>
-    <li>La variable <code>suma</code> recibe el resultado de sumar los dos números</li>
-    <li>Usamos <code>System.out.println()</code> para mostrar los valores</li>
-    <li>Luego cambiamos los valores de <code>numero1</code> y <code>numero2</code></li>
-    <li>Recalculamos la suma con los nuevos valores</li>
-</ol>
-
-<h3>¿Qué Aprendemos?</h3>
-<ul>
-    <li>Las variables pueden almacenar datos</li>
-    <li>Podemos usar variables en operaciones matemáticas</li>
-    <li>Los valores de las variables pueden cambiar durante la ejecución</li>
-    <li>Podemos recalcular valores si las variables cambian</li>
-</ul>
-HTML
+            'cuerpo' => "PROGRAMA DE EJEMPLO: CALCULADORA SIMPLE\n\n// Declaramos las variables\nint numero1 = 10;\nint numero2 = 5;\nint suma;\nint resta;\nint multiplicacion;\n\n// Realizamos operaciones\nsuma = numero1 + numero2;           // suma = 15\nresta = numero1 - numero2;          // resta = 5\nmultiplicacion = numero1 * numero2; // multiplicacion = 50\n\n// Mostramos resultados\nSystem.out.println(\"Suma: \" + suma);\nSystem.out.println(\"Resta: \" + resta);\nSystem.out.println(\"Multiplicación: \" + multiplicacion);\n\n// Podemos cambiar los valores\nnumero1 = 20;\nnumero2 = 3;\n\nsuma = numero1 + numero2;  // Ahora suma = 23\nSystem.out.println(\"Nueva suma: \" + suma);\n\nEXPLICACIÓN PASO A PASO\n\n1. Creamos tres variables: numero1, numero2, suma, etc.\n2. Inicializamos numero1 con 10 y numero2 con 5\n3. La variable suma recibe el resultado de sumar los dos números\n4. Usamos System.out.println() para mostrar los valores\n5. Luego cambiamos los valores de numero1 y numero2\n6. Recalculamos la suma con los nuevos valores\n\n¿QUÉ APRENDEMOS?\n\n• Las variables pueden almacenar datos\n• Podemos usar variables en operaciones matemáticas\n• Los valores de las variables pueden cambiar durante la ejecución\n• Podemos recalcular valores si las variables cambian"
         ]);
 
         // Contenido 5: Reglas y Buenas Prácticas
@@ -305,61 +163,7 @@ HTML
             'subtema_id' => $subVariable->id,
             'titulo' => 'Buenas Prácticas y Errores Comunes',
             'tipo_contenido' => 'TEXTO',
-            'cuerpo' => <<<'HTML'
-<h2>Buenas Prácticas</h2>
-
-<h3>✓ Nombres Descriptivos</h3>
-<p><strong>Bueno:</strong> <code>int edad_usuario = 25;</code></p>
-<p><strong>Malo:</strong> <code>int x = 25;</code></p>
-<p>Un nombre descriptivo hace el código más legible y fácil de entender.</p>
-
-<h3>✓ Inicializar Variables</h3>
-<p><strong>Bueno:</strong> <code>int contador = 0;</code></p>
-<p><strong>Malo:</strong> <code>int contador;</code> (sin valor inicial)</p>
-<p>Siempre inicializa tus variables para evitar valores indefinidos.</p>
-
-<h3>✓ Usar el Tipo Correcto</h3>
-<p><strong>Bueno:</strong> <code>double precio = 19.99;</code></p>
-<p><strong>Malo:</strong> <code>int precio = 19;</code> (para un precio con decimales)</p>
-<p>Elige el tipo de dato que mejor represente tu información.</p>
-
-<h2>Errores Comunes</h2>
-
-<h3>❌ Usar una variable sin declararla</h3>
-<pre><code>
-System.out.println(nombre);  // Error: nombre no fue declarada
-</code></pre>
-
-<h3>❌ Usar un nombre de variable con espacios</h3>
-<pre><code>
-int mi edad = 25;  // Error: sintaxis incorrecta
-</code></pre>
-
-<h3>❌ Asignar un valor del tipo incorrecto</h3>
-<pre><code>
-int edad = "veinticinco";  // Error: string a int
-</code></pre>
-
-<h3>❌ Usar un nombre de variable que ya existe</h3>
-<pre><code>
-int edad = 25;
-int edad = 30;  // Error: edad ya fue declarada
-</code></pre>
-
-<h3>❌ Olvidar el punto y coma</h3>
-<pre><code>
-int numero = 5  // Error: falta punto y coma
-</code></pre>
-
-<h2>Resumen</h2>
-<ul>
-    <li>Siempre <strong>declara</strong> e <strong>inicializa</strong> tus variables</li>
-    <li>Usa <strong>nombres descriptivos</strong> y en minúsculas con guiones bajos</li>
-    <li>Elige el <strong>tipo de dato</strong> apropiado</li>
-    <li>No olvides el <strong>punto y coma</strong> al final</li>
-    <li>Las variables pueden <strong>cambiar de valor</strong> durante la ejecución</li>
-</ul>
-HTML
+            'cuerpo' => "BUENAS PRÁCTICAS\n\n✓ NOMBRES DESCRIPTIVOS\n\nBueno: int edad_usuario = 25;\nMalo: int x = 25;\n\nUn nombre descriptivo hace el código más legible y fácil de entender.\n\n✓ INICIALIZAR VARIABLES\n\nBueno: int contador = 0;\nMalo: int contador; (sin valor inicial)\n\nSiempre inicializa tus variables para evitar valores indefinidos.\n\n✓ USAR EL TIPO CORRECTO\n\nBueno: double precio = 19.99;\nMalo: int precio = 19; (para un precio con decimales)\n\nElige el tipo de dato que mejor represente tu información.\n\nERRORES COMUNES\n\n❌ Usar una variable sin declararla\nSystem.out.println(nombre);  // Error: nombre no fue declarada\n\n❌ Usar un nombre de variable con espacios\nint mi edad = 25;  // Error: sintaxis incorrecta\n\n❌ Asignar un valor del tipo incorrecto\nint edad = \"veinticinco\";  // Error: string a int\n\n❌ Usar un nombre de variable que ya existe\nint edad = 25;\nint edad = 30;  // Error: edad ya fue declarada\n\n❌ Olvidar el punto y coma\nint numero = 5  // Error: falta punto y coma\n\nRESUMEN\n\n• Siempre declara e inicializa tus variables\n• Usa nombres descriptivos y en minúsculas con guiones bajos\n• Elige el tipo de dato apropiado\n• No olvides el punto y coma al final\n• Las variables pueden cambiar de valor durante la ejecución"
         ]);
     }
 }
