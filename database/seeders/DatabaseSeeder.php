@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             EjerciciosSeeder::class,
         ]);
-        DB::table('users')->where('id', 1)->delete();
+        DB::table('users')->delete();
         // 2. Creamos TU usuario administrador
         User::factory()->create([
             'id'       => 1,
@@ -24,6 +24,14 @@ class DatabaseSeeder extends Seeder
             'email' => 'alumno@test.com',
             'password' => '12345678',
             'rol' => 'estudiante',
+        ]);
+
+        // 3. Creamos usuario administrador roman
+        User::factory()->create([
+            'nombre' => 'Romancin',
+            'email' => 'databreak@admin.com',
+            'password' => 'password',
+            'rol' => 'administrador',
         ]);
     }
 }
